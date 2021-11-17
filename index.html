@@ -14,6 +14,9 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css" />
 
+    <!-- CSS AOS (Animate On Scroll) -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <title>My Portfolio | Munawar Ahmad</title>
   </head>
   <body id="home">
@@ -46,9 +49,9 @@
 
     <!-- Jumbotron -->
     <section class="jumbotron text-center">
-      <img src="img/profile.jpeg" alt="Munawar Ahmad" width="200" class="rounded-circle img-thumbnail" />
+      <img src="img/profile.jpeg" alt="Munawar Ahmad" width="200px" class="rounded-circle img-thumbnail" />
       <h1 class="display-4">Munawar Ahmad</h1>
-      <p class="lead">Programmer | Web Developer</p>
+      <p class="lead"></p>
 
       <!-- Style Ombak -->
       <!-- https://getwaves.io/ -->
@@ -65,13 +68,13 @@
     <!-- About Me -->
     <section id="about" style="margin-top: -150px">
       <div class="container">
-        <div class="row text-center mb-3">
+        <div class="row text-center mb-3" data-aos="fade-right" data-aos-duration="1000">
           <div class="col">
             <h2>About Me</h2>
           </div>
         </div>
 
-        <div class="row justify-content-center fs-5 text-center">
+        <div class="row justify-content-center fs-5 text-center" data-aos="fade-left" data-aos-duration="1000">
 
           <div class="col-md-8">
             <p>Salam kenal, nama saya Munawar Ahmad (Anwar) & saya adalah seorang Web Developer. Silahkan tinggalkan pesan di kolom contact atau hubungi ke nomor WA : 085219063505 untuk berkenalan lebih lanjut.</p>
@@ -112,7 +115,7 @@
 
         <div class="row justify-content-center">
           <div class="col-md-3 mb-3">
-            <div class="card">
+            <div class="card" data-aos="flip-left" data-aos-duration="1000">
               <img src="img/1.png" class="card-img-top" alt="Portfolio-1" />
               <div class="card-body">
                 <p class="card-text">
@@ -124,7 +127,7 @@
           </div>
 
           <div class="col-md-3 mb-3">
-            <div class="card">
+            <div class="card" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="100">
               <img src="img/2.png" class="card-img-top" alt="Portfolio-2" />
               <div class="card-body">
                 <p class="card-text">
@@ -136,7 +139,7 @@
           </div>
 
           <div class="col-md-3 mb-3">
-            <div class="card">
+            <div class="card" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="200">
               <img src="img/3.png" class="card-img-top" alt="Portfolio-3" />
               <div class="card-body">
                   Aplikasi Pro-Memo (Intranet) <br>
@@ -146,7 +149,7 @@
           </div>
 
           <div class="col-md-3 mb-3">
-            <div class="card">
+            <div class="card" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="300">
               <img src="img/4.png" class="card-img-top" alt="Portfolio-4" />
               <div class="card-body">
                   Aplikasi Pro-LPPD (Intranet) <br>
@@ -274,5 +277,29 @@
       })
     </script>
     <!-- / Script Kirim Data Ke Google Sheets -->
+
+    <!-- Script AOS (Animate On Scroll) -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <!-- / Script AOS (Animate On Scroll) -->
+
+    <!-- Script GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/TextPlugin.min.js"></script>
+
+    <script>
+      // Untuk dokumentasi animasi2 nya ada di menu Docs
+
+      gsap.registerPlugin(TextPlugin); //register plugin
+
+      gsap.to('.lead', {duration:2, delay:1.5, text: 'Programmer | Web Developer'});
+      gsap.from('.jumbotron img', {duration:1, rotateY:360, opacity:0});
+      gsap.from('.navbar', {duration:1.5, y:'-100%', opacity:0, ease: 'bounce'});
+      gsap.from('.display-4', {duration:1, x:-50, opacity:0, delay:0.5, ease: 'back'});
+
+    </script>
+    <!-- / Script GSAP -->
   </body>
 </html>
