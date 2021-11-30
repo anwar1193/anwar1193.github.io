@@ -446,6 +446,16 @@
 
     <!-- Script Tombol Subscribe -->
     <script src="https://apis.google.com/js/platform.js"></script>
+
+    <!-- Script Menu Di Klik Jadi Active -->
+    <script>
+      $(document).ready(function(){
+        $('ul li a').click(function(){
+          $('li a').removeClass('active');
+          $(this).addClass('active');
+        });
+      });
+    </script>
     
 
   </body>
